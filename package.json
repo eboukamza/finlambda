@@ -1,21 +1,41 @@
 {
   "name": "finlambda",
   "version": "1.0.0-alpha.1",
-  "description": "",
+  "description": "Functional programing library for financial calculations",
+  "keywords": [
+    "financial",
+    "utilities",
+    "tax",
+    "utils",
+    "fp",
+    "library"
+  ],
+  "main": "umd/finlambda.umd.js",
+  "module": "es5m/finlambda.js",
+  "es2015": "es2015/finlambda.js",
+  "unpkg": "umd/finlambda.umd.min.js",
+  "jsdelivr": "umd/finlambda.umd.min.js",
   "scripts": {
-    "test": "jest"
+    "build:esm5": "rollup -c rollup-es5m.config.js -o dist/es5m/finlambda.js",
+    "build:es2015": "rollup -c rollup-es2015.config.js -o dist/es2015/finlambda.js",
+    "build:umd": "cross-env NODE_ENV=development rollup -c rollup-umd.config.js -o dist/umd/finlambda.umd.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c rollup-umd.config.js -o dist/umd/finlambda.umd.min.js",
+    "build": "npm run build:esm5 && npm run build:es2015 && npm run build:umd && npm run build:umd:min && npm run copy:assets",
+    "copy:assets": "cp -r src/ dist/ && cp README.md dist && cp package.json dist",
+    "test": "jest",
+    "release": "npm test && npm run build && npm publish dist --access public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eboukamza/finlambda.git"
   },
-  "author": "Elias Zain",
+  "author": "Elias Boukamza <ezain2t@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/eboukamza/finlambda/issues"
   },
   "homepage": "https://github.com/eboukamza/finlambda#readme",
-  "dependencies": {
+  "peerDependencies": {
     "ramda": "0.26.0"
   },
   "devDependencies": {
@@ -23,7 +43,12 @@
     "@babel/preset-env": "^7.1.6",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
-    "jest": "^22.4.3"
+    "cross-env": "^5.2.0",
+    "jest": "^22.4.3",
+    "ramda": "0.26.0",
+    "rollup": "^0.67.3",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-terser": "^3.0.0"
   },
   "jest": {
     "transform": {
