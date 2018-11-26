@@ -23,7 +23,10 @@
     "build": "npm run build:esm5 && npm run build:es2015 && npm run build:umd && npm run build:umd:min && npm run copy:assets",
     "copy:assets": "cp -r src/ dist/ && cp README.md dist && cp package.json dist",
     "test": "jest",
-    "release": "npm test && npm run build && npm publish dist --access public"
+    "release": "npm test && npm run build && npm publish dist"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,16 @@
 sudo: false
 language: node_js
 node_js:
-- 10
+  - 10
 script:
   - npm run build
+before_deploy:
+  - cd dist
+deploy:
+  provider: npm
+  email: ezain2t@gmail.com
+  api_key: $NPM_TOKEN
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: eboukamza/finlambda
