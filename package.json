@@ -2,9 +2,7 @@
   "name": "finlambda",
   "version": "1.0.0-alpha.1",
   "description": "",
-  "main": "dist/index.js",
   "scripts": {
-    "build": "babel ./source -d ./dist --ignore test.js",
     "test": "jest"
   },
   "repository": {
@@ -21,7 +19,6 @@
     "ramda": "0.26.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "babel-core": "^7.0.0-bridge",
