@@ -4,13 +4,20 @@ node_js:
   - 10
 script:
   - npm run build
-before_deploy:
+after_script:
   - cd dist
+
 deploy:
-  provider: npm
-  email: ezain2t@gmail.com
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true
-    repo: eboukamza/finlambda
+  - provider: npm
+    api_key: $NPM_TOKEN
+    email: ezain2t@gmail.com
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: eboukamza/finlambda
+  - provider: releases
+    skip_cleanup: true
+    api_key: $GH_TOKEN
+    on:
+      tags: true
+      repo: eboukamza/finlambda
