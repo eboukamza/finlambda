@@ -5,7 +5,7 @@ finlambda
 
 Is a JavaScript library for financial calculations designed to be used with functional programing paradigm.
 
-It use [Ramda](https://ramdajs.com/).
+It uses [Ramda](https://ramdajs.com/).
 
 
 Why finlambda
@@ -13,7 +13,7 @@ Why finlambda
 
 Build your custom calculator for taxes, compose it easily to using ramda.
 
-example
+finlambda allows write your business rules easy to understand.
 
 Installation
 ---
@@ -44,8 +44,8 @@ Usage
 
   create a complex tax
 
-    const bracket15 = compose(rateAt(0.15), forInterval(0, 38120))
-    const bracket28 = compose(rateAt(0.28), forInterval(38121))
+    const bracket15 = taxBracket(rateAt(0.15), forInterval(0, 38120))
+    const bracket28 = taxBracket(rateAt(0.28), forInterval(38121))
     const brackets = [bracket15, bracket28]
     const corpTax = tax(brackets);
     const afterCorpTax = netAfter(corpTax)
@@ -63,7 +63,7 @@ Usage
 
     withFlatTax(100000) //=> 53868.5
 
-  detailed tax output
+  tax value in each bracket
 
     const coprTaxDetailed = taxDetail(brackets)
     corpTaxDetailed(100000) //=> [ 5718, 11726.12 ]

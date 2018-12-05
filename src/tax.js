@@ -3,15 +3,26 @@ import { compose, sum } from 'ramda'
 import { taxDetail } from './taxDetail'
 
 /**
- * create a function than calculate a tax with different tax brackets. If the tax do not have brackets, prefer rateAt()
+ * @export
+ * Create a function to calculate a tax as the sum of applying each tax bracket (progressive rates).
+ *
+ * <br>
+ * If the tax do not have brackets, consider use simplest {@link rateAt}
  * @sig [Function] -> Number -> Number
  *
- * @see rateAt, forInterval, taxBracket
+ * @param {Array} taxBrackets
+ * @return {Function} The tax function
  *
  * @example
- *     const bracket1 = taxBracket(rateAt(0.1), forInterval(0, 2000)) // bracket1(5000)=> 200
- *     const bracket2 = taxBracket(rateAt(0.2), forInterval(2000)) // bracket2(5000)=> 600
  *
- *     tax([bracket1, bracket2])(5000)/ //=> 800
+ * // 10% for the first 2000 e
+ * const bracket1 = taxBracket(rateAt(0.1), forInterval(0, 2000)) // bracket1(5000)=> 200
+ * // 20% form 2000 e
+ * const bracket2 = taxBracket(rateAt(0.2), forInterval(2000)) // bracket2(5000)=> 600
+ *
+ * tax([bracket1, bracket2])(5000)/ //=> 800
+ *
+ * @see {@link rateAt}, {@link forInterval}, {@link taxBracket}
  */
-export const tax = taxBrackets => compose(Math.ceil, sum, taxDetail(taxBrackets))
+const tax = taxBrackets => compose(Math.ceil, sum, taxDetail(taxBrackets))
+export { tax }

@@ -6,6 +6,7 @@
     "financial",
     "utilities",
     "tax",
+    "money",
     "utils",
     "fp",
     "library"
@@ -23,7 +24,8 @@
     "build": "npm run build:esm5 && npm run build:es2015 && npm run build:umd && npm run build:umd:min && npm run copy:assets",
     "copy:assets": "cp -r src/ dist/ && cp README.md dist && cp package.json dist",
     "test": "jest",
-    "release": "npm test && npm run build && npm publish dist"
+    "release": "npm test && npm run build && npm publish dist",
+    "generate-docs": "jsdoc -c doc.config.json src"
   },
   "publishConfig": {
     "access": "public"
@@ -58,5 +60,8 @@
       "^.+\\.js$": "babel-jest"
     },
     "testEnvironment": "node"
+  },
+  "dependencies": {
+    "jsdoc": "^3.5.5"
   }
 }
