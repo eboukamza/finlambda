@@ -24,5 +24,5 @@ import { taxDetail } from './taxDetail'
  *
  * @see {@link rateAt}, {@link forInterval}, {@link taxBracket}
  */
-const tax = taxBrackets => compose(Math.ceil, sum, taxDetail(taxBrackets))
+const tax = taxBrackets => compose(sum, taxDetail(taxBrackets))
 export { tax }
