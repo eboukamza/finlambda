@@ -67,3 +67,5 @@ Usage
 
     const coprTaxDetailed = taxDetail(brackets)
     corpTaxDetailed(100000) //=> [ 5718, 11726.12 ]
+
+Read all documentation [here](https://eboukamza.github.io/finlambda-docs/)
