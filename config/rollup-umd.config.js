@@ -1,12 +1,7 @@
 import {terser as uglify} from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
-const pkg = require('./package.json')
 
-const banner = `//  FinLambda v${pkg.version}
-//  ${pkg.homepage}
-//  (c) 2018 - Elias Boukamza'
-//  FinLambda may be freely distributed under the MIT license.
-`
+const banner = require('./banner');
 
 var config = {
   input: 'src/index.js',
@@ -23,7 +18,7 @@ var config = {
   ]
 }
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'prod') {
   config.plugins.push(
     uglify({
       compress: {

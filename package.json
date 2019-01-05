@@ -17,15 +17,15 @@
   "unpkg": "umd/finlambda.umd.min.js",
   "jsdelivr": "umd/finlambda.umd.min.js",
   "scripts": {
-    "build:esm5": "rollup -c rollup-es5m.config.js -o dist/es5m/finlambda.js",
-    "build:es2015": "rollup -c rollup-es2015.config.js -o dist/es2015/finlambda.js",
-    "build:umd": "cross-env NODE_ENV=development rollup -c rollup-umd.config.js -o dist/umd/finlambda.umd.js",
-    "build:umd:min": "cross-env NODE_ENV=production rollup -c rollup-umd.config.js -o dist/umd/finlambda.umd.min.js",
+    "build:esm5": "rollup -c config/rollup-es5m.config.js -o dist/es5m/finlambda.js",
+    "build:es2015": "rollup -c config/rollup-es2015.config.js -o dist/es2015/finlambda.js",
+    "build:umd": "rollup -c config/rollup-umd.config.js -o dist/umd/finlambda.umd.js",
+    "build:umd:min": "cross-env NODE_ENV=prod rollup -c config/rollup-umd.config.js -o dist/umd/finlambda.umd.min.js",
     "build": "npm run build:esm5 && npm run build:es2015 && npm run build:umd && npm run build:umd:min && npm run copy:assets",
     "copy:assets": "cp -r src/ dist/ && cp README.md dist && cp package.json dist",
     "test": "jest",
     "release": "npm test && npm run build && npm publish dist",
-    "generate-docs": "jsdoc -c doc.config.json src"
+    "generate-docs": "jsdoc -c config/jsdoc.config.json src"
   },
   "publishConfig": {
     "access": "public"
