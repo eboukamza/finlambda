@@ -11,9 +11,9 @@ It uses [Ramda](https://ramdajs.com/).
 Why finlambda
 ---
 
-Build your custom calculator for taxes, compose it easily to using ramda.
+Build your custom calculator for taxes, compose it easily using ramda.
 
-finlambda allows write your business rules easy to understand.
+finlambda allows write your business rules easy to understand, easy to change and without side effects.
 
 Installation
 ---
