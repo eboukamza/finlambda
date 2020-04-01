@@ -60,6 +60,7 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     },
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true
   }
 }
