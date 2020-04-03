@@ -68,4 +68,12 @@ Usage
     const coprTaxDetailed = taxDetail(brackets)
     corpTaxDetailed(100000) //=> [ 5718, 11726.12 ]
 
+  calculate net or gross price adding or deducting VAT
+
+    const vat20 = rateAt(0.2)
+    const grossAmount = grossOf(vat20, 1000) // 1200
+
+    const netAmount = netOf(0.2, 1200) // 1000
+
+
 Read all documentation [here](https://eboukamza.github.io/finlambda-docs/)
