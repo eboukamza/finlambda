@@ -2,6 +2,7 @@ finlambda
 ===
 
 [![Travis](https://travis-ci.org/eboukamza/finlambda.svg?branch=master)](https://travis-ci.org/eboukamza/finlambda)
+[![Coverage Status](https://coveralls.io/repos/github/eboukamza/finlambda/badge.svg?branch=master)](https://coveralls.io/github/eboukamza/finlambda?branch=master)
 
 Is a JavaScript library for financial calculations designed to be used with functional programing paradigm.
 
