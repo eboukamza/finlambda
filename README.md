@@ -9,10 +9,10 @@ Is a JavaScript library for financial calculations designed to be used with func
 It uses [Ramda](https://ramdajs.com/).
 
 
-Why finlambda
+Why finlambda?
 ---
 
-Build your custom calculator for taxes, compose it easily using ramda.
+Build your custom calculator for taxes and compose it easily using ramda.
 
 finlambda allows write your business rules easy to understand, easy to change and without side effects.
 
@@ -72,9 +72,9 @@ Usage
   calculate net or gross price adding or deducting VAT
 
     const vat20 = rateAt(0.2)
-    const grossAmount = grossOf(vat20, 1000) // 1200
+    const grossAmount = grossOf(vat20, 1000) //=> 1200
 
-    const netAmount = netOf(0.2, 1200) // 1000
+    const netAmount = netOf(0.2, 1200) //=> 1000
 
 
 Read all documentation [here](https://eboukamza.github.io/finlambda-docs/)
