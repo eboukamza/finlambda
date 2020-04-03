@@ -5,8 +5,8 @@ import { curry } from 'ramda'
  * <br>
  * is currified
  *
- * @param rate VAT rate
- * @param amount gross price
+ * @param {Number} rate VAT rate (decimal from 0 to 1)
+ * @param {Number} amount gross price
  * @returns {number} net price
  *
  * @example

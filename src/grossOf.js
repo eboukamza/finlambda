@@ -8,7 +8,7 @@ import { curry } from 'ramda'
  * @sig Function -> Number -> Number
  *
  * @param tax {Function} VAT tax
- * @param amount net price
+ * @param {Number} amount net price
  * @returns {Number} gross price
  *
  * @example
