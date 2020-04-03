@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - 10
 script:
-  - npm test && npm run build && npm run generate-docs && cd dist
+  - npm run coveralls && npm run build && npm run generate-docs && cd dist
 
 deploy:
   - provider: npm

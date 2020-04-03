@@ -24,6 +24,7 @@
     "build": "npm run build:esm5 && npm run build:es2015 && npm run build:umd && npm run build:umd:min && npm run copy:assets",
     "copy:assets": "cp -r src/ dist/ && cp README.md dist && cp package.json dist",
     "test": "jest",
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
     "release": "npm test && npm run build && npm publish dist",
     "generate-docs": "jsdoc -c config/jsdoc.config.json src"
   },
@@ -48,6 +49,7 @@
     "@babel/preset-env": "^7.1.6",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^24.9.0",
+    "coveralls": "^3.0.11",
     "cross-env": "^5.2.0",
     "jest": "^25.2.4",
     "jsdoc": "~3.5.5",
